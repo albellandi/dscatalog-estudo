@@ -7,7 +7,7 @@ import com.ajblima.dscatalog.entities.Category;
 public class CategoryDTO  implements Serializable  {
 
 	private static final long serialVersionUID = 1L;
-	
+	//teste
 	private Long id;
 	private String name;
 	
