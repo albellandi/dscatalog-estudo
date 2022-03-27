@@ -30,7 +30,7 @@ public class Product implements Serializable  {
 	
 	@Column(columnDefinition = "TEXT")
 	private String description;
-	private String price;
+	private Double price;
 	private String imgUrl;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
@@ -45,7 +45,7 @@ public class Product implements Serializable  {
 	public Product() {
 	}
 	
-	public Product(Long id, String name, String description, String price, String imgUrl, Instant date) {
+	public Product(Long id, String name, String description, Double price, String imgUrl, Instant date) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -79,11 +79,11 @@ public class Product implements Serializable  {
 		this.description = description;
 	}
 
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
