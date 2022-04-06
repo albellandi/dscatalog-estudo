@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 import com.ajblima.dscatalog.entities.Category;
 import com.ajblima.dscatalog.entities.Product;
@@ -17,10 +21,15 @@ public class ProductDTO implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	@Size(min = 5, max = 60, message = "O campo de ter entre 5 e 60 caracteres")
+	@NotBlank(message = "Campo requerido")
 	private String name;
+	@NotBlank(message = "Campo requerido")
 	private String description;
+	@Positive(message = "O preço deve ser um valor positivo")
 	private Double price;
 	private String imgUrl;	
+	@PastOrPresent(message = "A data não pode ser futura")
 	private Instant date;
 	
 	private List<CategoryDTO> categories = new ArrayList<>();
