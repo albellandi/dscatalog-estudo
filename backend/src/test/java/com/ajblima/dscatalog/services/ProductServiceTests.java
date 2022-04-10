@@ -58,9 +58,9 @@ public class ProductServiceTests {
 		category = Factory.CreateCategory();
 		page = new PageImpl<>(List.of(product));
 		
-		Mockito.when(repository.getById(existingId)).thenReturn(product);
+		Mockito.when(repository.getOne(existingId)).thenReturn(product);
 		
-		Mockito.when(repository.getById(nonExistingId)).thenThrow(EntityNotFoundException.class);
+		Mockito.when(repository.getOne(nonExistingId)).thenThrow(EntityNotFoundException.class);
 		
 		Mockito.when(categoryRepository.findById(existingId)).thenReturn(Optional.of(category));
 		
